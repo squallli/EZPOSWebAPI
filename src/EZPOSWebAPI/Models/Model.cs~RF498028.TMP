@@ -1,0 +1,31 @@
+﻿using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace WebApplication2.Models
+{
+    public class ErrorInfoContext : DbContext
+    {
+        public ErrorInfoContext(DbContextOptions<ErrorInfoContext> options)
+            : base(options)
+        {
+        }
+
+        public DbSet<Error> ErrorInfo { get; set; }
+
+    }
+
+    public class Error
+    {
+        public string ProductNo { get; set; }
+        public string ProductName { get; set; }
+        public string Desc { get; set; }
+        public float UnitPrice { get; set; }
+        public int StartQty { get; set; }
+        public int SaleQty { get; set; }
+        public string Img { get; set; }
+
+    }
+}
